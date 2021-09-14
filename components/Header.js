@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 
 const Header = ({title}) => {
   return (
-    <View style={styles.haeder}>
+    <View style={styles.header}>
       <Text style={styles.text}>{title}</Text>
     </View>
   );
@@ -20,7 +20,7 @@ Header.defaultProps = {
 
 const styles = StyleSheet.create({
 
-  haeder : {
+  header : {
     height : 60, 
     padding : 15, 
     backgroundColor : 'darkslateblue'

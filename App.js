@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
 import Header from './components/Header';
+import ListItem from './components/ListItem';
 import uuid from 'react-native-uuid';
 
 const App = () => {
@@ -18,7 +19,7 @@ const App = () => {
       <Header />
       <FlatList 
         data={item} 
-        renderItem={({item}) => <Text>{item.text}</Text>}
+        renderItem={({item}) => <ListItem item={item} />}
       />
       {/* <Text style={styles.text}>Hello World</Text> */}
       {/* <Image source={{uri : 'https://randomuser.me/api/portraits/men/1.jpg'}} 
