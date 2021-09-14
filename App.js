@@ -1,11 +1,28 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-
+import React, {useState} from 'react';
+import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
+import Header from './components/Header';
+import uuid from 'react-native-uuid';
 
 const App = () => {
+
+  const [item, setItems] = useState([
+    {id:uuid.v4(), text : 'Milk'},
+    {id:uuid.v4(), text : 'Eggs'},
+    {id:uuid.v4(), text : 'Bread'},
+    {id:uuid.v4(), text : 'Juice'}
+  ])
+
+
   return (
     <View style={styles.container}>
-      <Text style={{color :'darkslateblue', fontSize : 30}}>Hello World</Text>
+      <Header />
+      <FlatList 
+        data={item} 
+        renderItem={({item}) => <Text>{item.text}</Text>}
+      />
+      {/* <Text style={styles.text}>Hello World</Text> */}
+      {/* <Image source={{uri : 'https://randomuser.me/api/portraits/men/1.jpg'}} 
+      style={styles.img}/> */}
     </View>
   );
 };
@@ -18,8 +35,20 @@ const styles = StyleSheet.create({
 
   container : {
     flex: 1, 
-    justifyContent : 'center', 
-    alignItems: 'center'
+    // paddingTop : 60
+    // justifyContent : 'center', 
+    // alignItems: 'center'
+  }, 
+
+  text : {
+    color :'darkslateblue', 
+    fontSize : 30
+  }, 
+  
+  img : {
+    width : 100,
+    height : 100, 
+    borderRadius : 100/2
   }
 });
 
