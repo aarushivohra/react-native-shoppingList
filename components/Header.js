@@ -23,12 +23,14 @@ const styles = StyleSheet.create({
   header : {
     height : 60, 
     padding : 15, 
-    backgroundColor : 'darkslateblue'
+    backgroundColor : 'darkslateblue',
+    alignItems : 'center'
   }, 
 
   text : {
     color :'#fff', 
-    fontSize : 23
+    fontSize : 23, 
+    
   }, 
   
 });
